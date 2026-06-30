@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Luminary Love Foundation | Contact</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Luminary Love Foundation</div>
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="vision.html">Vision</a></li>
+        <li><a href="mission.html">Mission</a></li>
+        <li><a href="service.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Heading -->
+  <section class="luxury-feature reveal-on-scroll">
+    <h1>We’re Here for You</h1>
+    <p>Reach out for support, questions, or to get involved</p>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="feedback-section">
+
+    <form class="feedback-form">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="How can we support you?" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+
+    <!-- Confirmation -->
+    <div id="confirmation-message" class="hidden-message">
+      💛 Thank you for reaching out. We’ll get back to you as soon as possible.
+    </div>
+
+    <!-- Direct Contact Info -->
+    <div style="margin-top: 30px; text-align: center;">
+      <p><strong>Phone:</strong> +267 77 952 817</p>
+      <p><strong>Email:</strong> luciabaratisetshego@gmail.com</p>
+    </div>
+
+  </section>
+
+  <!-- Scroll Animation -->
+  <script>
+    const reveals = document.querySelectorAll(".reveal-on-scroll");
+
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+
+      reveals.forEach(el => {
+        const top = el.getBoundingClientRect().top;
+        if (top < triggerBottom) {
+          el.classList.add("revealed");
+        }
+      });
+    };
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", revealOnScroll);
+  </script>
+
+  <!-- Form Script -->
+  <script>
+    document.querySelector('.feedback-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+      document.getElementById('confirmation-message').style.display = 'block';
+      this.reset();
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-flex">
+      <p>© 2025 Luminary Love Foundation | All Rights Reserved</p>
+
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
